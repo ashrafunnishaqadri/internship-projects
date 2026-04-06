@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VoxScribe | Premium Speech Recognition</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="A powerful, browser-based speech recognition tool for real-time transcription with premium glassmorphic UI.">
+</head>
+<body>
+    <div class="container" id="app">
+        <main class="glass-card">
+            <header>
+                <h1>VoxScribe</h1>
+                <p class="subtitle">Next-Gen Audio Transcription</p>
+            </header>
+
+            <div class="controls-header">
+                <div class="status-indicator">
+                    <span id="status-dot" class="dot"></span>
+                    <span id="status-text">Ready to Record</span>
+                </div>
+                <select id="language-select">
+                    <option value="en-US">English (US)</option>
+                    <option value="en-IN" selected>English (India)</option>
+                    <option value="hi-IN">Hindi (India)</option>
+                    <option value="es-ES">Spanish (Spain)</option>
+                    <option value="fr-FR">French (France)</option>
+                    <option value="de-DE">German (Germany)</option>
+                    <option value="ja-JP">Japanese (Japan)</option>
+                </select>
+            </div>
+
+            <div class="transcription-area">
+                <div id="output" class="output-container" data-placeholder="Click 'Start Recording' and speak your words into existence..." tabindex="0"></div>
+            </div>
+
+            <div class="actions">
+                <button id="record-btn" class="btn btn-record">
+                    <span id="btn-text">Start Recording</span>
+                </button>
+                <button id="upload-btn" class="btn btn-secondary">
+                    Upload Note (AI)
+                </button>
+                <input type="file" id="file-input" accept="audio/*" style="display: none;">
+                <button id="copy-btn" class="btn btn-secondary">
+                    Copy Text
+                </button>
+                <button id="download-btn" class="btn btn-secondary">
+                    Download .txt
+                </button>
+                <button id="speak-btn" class="btn btn-secondary">
+                    Read Aloud
+                </button>
+                <button id="clear-btn" class="btn btn-secondary">
+                    Clear
+                </button>
+            </div>
+
+            <!-- AI Progress Section -->
+            <div id="ai-status" class="status-container" style="display: none;">
+                <div class="ai-label">AI Processing...</div>
+                <div class="progress-bar-bg">
+                    <div id="progress-bar" class="progress-bar-fill" style="width: 0%;"></div>
+                </div>
+                <div id="ai-message" class="ai-message">Initializing AI Model...</div>
+            </div>
+
+            <p id="browser-warning" style="display: none; color: var(--error); text-align: center; font-size: 0.9rem;">
+                Warning: Speech recognition is not supported in this browser. Please use Chrome or Edge.
+            </p>
+        </main>
+
+        <footer class="footer-info">
+            <p>VoxScribe Pro &copy; 2026. Built with Precision & Care.</p>
+        </footer>
+    </div>
+
+    <!-- For a premium feel, adding a simple particle background layer if needed, but keeping it clean for now -->
+    
+    <script src="script.js"></script>
+</body>
+</html>
